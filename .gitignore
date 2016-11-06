@@ -1,3 +1,5 @@
 *~
 .stack-work
 *.swp
+_site
+_cache
