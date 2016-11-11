@@ -1,0 +1,26 @@
+#!/bin/bash
+
+SITE_PATH="../alexanderlobov.github.io/"
+
+echo Deploying site
+
+if git diff-index --quiet HEAD; then
+    echo "No changes in the working copy of the source code found"
+    commit_hash=`git log -n 1 --oneline | cut -f 1 -d ' '`
+    echo Last commit is $commit_hash
+    cp _site/* $SITE_PATH
+    cd $SITE_PATH
+    git status
+
+    echo "Commit the changes to $SITE_PATH (y/n)?"
+    read answer
+    case $answer in
+        y | yes) git add -A && git commit -m "Updating from $commit_hash" ;;
+        *) echo No changes has been commited; exit 2 ;;
+    esac
+else
+    echo "There are changes in the working copy."
+    echo "You should commit them before deploying."
+    exit 1
+fi
+
