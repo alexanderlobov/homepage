@@ -15,7 +15,7 @@ if git diff-index --quiet HEAD; then
     echo "Commit the changes to $SITE_PATH (y/n)?"
     read answer
     case $answer in
-        y | yes) git add -A && git commit -m "Updating from $commit_hash" ;;
+        y | yes) git add -A && git commit -m "Updating from $commit_hash" && git push origin master ;;
         *) echo No changes has been commited; exit 2 ;;
     esac
 else
