@@ -4,9 +4,10 @@ tags: transmission,tutorial
 language: english
 ---
 
-This tutorial is about installing and configuring Transmission on Ubuntu 14.04.
+This tutorial is about installation and configuration of Transmission torrent
+client on Ubuntu 14.04.
 
-## Installing
+## Installation
 
 First, install [Transmission](https://transmissionbt.com/):
 
@@ -55,3 +56,42 @@ file, settings.json), for example:
 It turns out that Transmission does not write any logs by default. If you want
 to have logs, you need further configuration. If you do not want logs, you can
 safely skip this section.
+
+You can set log file and log level in transmission-daemon command line options.
+As it is a daemon, we need to add this options to
+`/etc/default/transmission-daemon` config file.
+
+``` bash
+LOGFILE="/var/log/transmission.log"
+
+# Default options for daemon, see transmission-daemon(1) for more options
+OPTIONS="--config-dir $CONFIG_DIR --logfile $LOGFILE --log-info"
+```
+
+Transmission can not create log file because of lack of rights. So, create log
+file and change access rights.
+
+``` bash
+touch /var/log/transmission.log
+sudo chown debian-transmission /var/log/transmission.log
+```
+
+### Log rotation
+
+Add a file `/etc/logrotate.d/transmission` containing
+```
+/var/log/transmission.log {
+        rotate 7
+        daily
+        missingok
+        notifempty
+        delaycompress
+        compress
+}
+```
+
+## Reference
+
+Log configuration is based on [this article][log].
+
+[log]: https://shpargalki.org.ua/162/logi-transmission
