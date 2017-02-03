@@ -1,7 +1,7 @@
 ---
 title: Mac configuration cheatsheet
 tags: mac
-language: russian
+language: russian, english
 ---
 
 Большую часть жизни моей рабочей операционной системой был Линукс. Когда я
