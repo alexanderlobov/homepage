@@ -11,6 +11,7 @@ if git diff-index --quiet HEAD; then
     cp -r _site/* $SITE_PATH
     cd $SITE_PATH
     git status
+    git pull origin master
 
     echo "Commit the changes to $SITE_PATH (y/n)?"
     read answer
