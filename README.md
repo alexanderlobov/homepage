@@ -1,1 +1,1 @@
-Hosted on alexanderlobov.ru
+Hosted on http://alexanderlobov.ru
