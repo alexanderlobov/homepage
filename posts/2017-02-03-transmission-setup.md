@@ -53,6 +53,11 @@ file, settings.json), for example:
 
 ## Logging
 
+*When I run transmission for the first time, it seemed to me, that Transmission
+does not write logs. Then I found the log in
+`/var/logs/upstart/transmission-daemon.log`.  So this section is redundant, but
+I leave it here, because it was useful experience anyway.*
+
 It turns out that Transmission does not write any logs by default. If you want
 to have logs, you need further configuration. If you do not want logs, you can
 safely skip this section.
