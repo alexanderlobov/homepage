@@ -35,36 +35,13 @@ main = hakyllWith config $ do
             >>= relativizeUrls
             >>= removeIndexHtml
 
-    create ["archive.html"] $ do
+    match "archive.html" $ do
         route niceRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
-                    defaultContext
-
-            makeItem ""
-                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
-                >>= relativizeUrls
-                >>= removeIndexHtml
-
+        compile makeIndex
 
     match "index.html" $ do
         route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Home"                `mappend`
-                    defaultContext
-
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
-                >>= relativizeUrls
-                >>= removeIndexHtml
+        compile makeIndex
 
     match "templates/*" $ compile templateCompiler
 
@@ -79,7 +56,6 @@ postCtx =
 myUrlField :: Context a
 myUrlField = field "myurl" $
     fmap (maybe empty $ removeIndexStr . toUrl) . getRoute . itemIdentifier
-
 
 niceRoute :: Routes
 niceRoute = customRoute createIndexRoute
@@ -99,4 +75,15 @@ removeIndexStr url = case splitFileName url of
         isLocal :: String -> Bool
         isLocal uri = not ("://" `isInfixOf` uri)
 
+makeIndex :: Compiler (Item String)
+makeIndex = do
+    posts <- recentFirst =<< loadAll "posts/*"
+    let indexCtx =
+            listField "posts" postCtx (return posts) `mappend`
+            defaultContext
 
+    getResourceBody
+        >>= applyAsTemplate indexCtx
+        >>= loadAndApplyTemplate "templates/default.html" indexCtx
+        >>= relativizeUrls
+        >>= removeIndexHtml
