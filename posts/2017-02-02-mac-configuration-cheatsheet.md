@@ -73,3 +73,18 @@ F9 -> Configure status notifications
 
 Edit -> Marks -> Automatically Mark Prompt Lines
 
+## Copying from system clipboard does not work in tmux and vim
+
+There are several issues. First, default vim compiled without `+clipboard`
+options. It seems that version from homebrew is good. It is also possible to
+install macvim, and use `mvim -v` to run macvim in console.
+
+Second, clipboard does not work in tmux. I use byobu based on tmux, so it does
+not work too. One of the solutions is
+[this](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard). I have installed
+`reattach-to-user-namespace`, added
+    set-option -g default-command "reattach-to-user-namespace -l zsh"
+to `.tmux.conf`, but it does not help.
+
+So I need more time to solve the issue :(
+
