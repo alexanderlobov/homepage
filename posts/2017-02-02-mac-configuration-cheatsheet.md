@@ -88,3 +88,13 @@ to `.tmux.conf`, but it does not help.
 
 So I need more time to solve the issue :(
 
+## Highlight broken links in terminal
+
+1. Install GNU coreutils: `brew install coreutils`
+2. Put the following in your `~/.bash_rc`:
+       eval $(gdircolors)
+       alias ls="gls --color=auto"
+
+[Source](http://superuser.com/questions/401243/mac-osx-cannot-color-broken-symlinks)
+
+
