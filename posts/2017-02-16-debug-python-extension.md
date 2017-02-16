@@ -156,4 +156,4 @@ Apples's dynamic linker dyld on Mac OS X Sierra. When you run `gdb`, you can see
 
 # Reference
 
-http://podoliaka.org/2016/04/10/debugging-cpython-gdb/
+<http://podoliaka.org/2016/04/10/debugging-cpython-gdb/>
