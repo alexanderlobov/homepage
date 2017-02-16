@@ -92,8 +92,10 @@ So I need more time to solve the issue :(
 
 1. Install GNU coreutils: `brew install coreutils`
 2. Put the following in your `~/.bash_rc`:
-       eval $(gdircolors)
-       alias ls="gls --color=auto"
+    ```bash
+    eval $(gdircolors)
+    alias ls="gls --color=auto"
+    ```
 
 [Source](http://superuser.com/questions/401243/mac-osx-cannot-color-broken-symlinks)
 
