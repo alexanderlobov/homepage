@@ -7,7 +7,7 @@ echo Deploying site
 if git diff-index --quiet HEAD; then
     echo "No changes in the working copy of the source code found"
     echo "git pull origin master"
-    git pull origin master
+    # git pull origin master
     commit_hash=`git log -n 1 --oneline | cut -f 1 -d ' '`
     echo Last commit is $commit_hash
     cp -r _site/* $SITE_PATH
