@@ -1,6 +1,6 @@
 ---
-title: Hello
-tags: vim
+title: codefocus colorsheme for vim
+tags: vim, colorscheme
 language: english
 ---
 
