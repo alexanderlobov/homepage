@@ -1,5 +1,5 @@
 ---
-title: codefocus colorsheme for vim
+title: codefocus colorscheme for vim
 tags: vim, colorscheme
 language: english
 ---
