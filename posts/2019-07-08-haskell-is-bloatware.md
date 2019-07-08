@@ -1,0 +1,136 @@
+---
+title: Haskell is Bloatware
+---
+
+I have not written anything in my blog for about one and a half year. I have not
+touched haskell this period of time to. And I have changed the computer since
+then.
+
+Today I tried to write an article. I use Hakyll as a site generator. I
+completely forgot how to use it, but thanks gods, I made a note how to compile
+and run it. But I was completely disappointed with the result.
+
+```
+[alex@alex homepage]$ sudo pacman -S stack
+[sudo] password for alex:
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (178) ghc-libs-8.6.5-1  haskell-aeson-1.4.3.0-12
+               haskell-aeson-compat-0.3.9-41
+               haskell-annotated-wl-pprint-0.7.0-13
+               haskell-ansi-terminal-0.9.1-1  haskell-ansi-wl-pprint-0.6.9-1
+               haskell-asn1-encoding-0.9.5-91 haskell-asn1-parse-0.9.4-102
+               haskell-asn1-types-0.3.2-98  haskell-async-2.2.1-7
+               haskell-attoparsec-0.13.2.2-54
+               haskell-attoparsec-iso8601-1.0.1.0-28
+               haskell-auto-update-0.1.4.1-3  haskell-base-compat-0.10.5-5
+               haskell-base-orphans-0.8.1-12  haskell-base-prelude-1.3-6
+               haskell-base16-bytestring-0.1.1.6-14
+               haskell-base64-bytestring-1.0.0.2-10  haskell-basement-0.0.10-3
+               haskell-bifunctors-5.5.4-10  haskell-bindings-uname-0.1-11
+               haskell-bitarray-0.0.1.1-12  haskell-blaze-builder-0.4.1.0-8
+               haskell-blaze-html-0.9.1.1-27  haskell-blaze-markup-0.8.2.2-21
+               haskell-byteable-0.1.1-14  haskell-call-stack-0.1.0-12
+               haskell-case-insensitive-1.2.1.0-1 haskell-cereal-0.5.8.1-1
+               haskell-clock-0.8-1  haskell-cmdargs-0.10.20-8
+               haskell-colour-2.3.5-5  haskell-comonad-5.0.5-9
+               haskell-conduit-1.3.1.1-17  haskell-conduit-extra-1.3.1.1-20
+               haskell-connection-0.3.0-7 haskell-constraints-0.11-6
+               haskell-contravariant-1.5.1-1  haskell-cookie-0.4.4-8
+               haskell-cryptohash-0.11.9-100
+               haskell-cryptohash-sha256-0.11.101.0-9
+               haskell-cryptonite-0.26-4  haskell-cryptonite-conduit-0.2.2-168
+               haskell-data-default-class-0.1.2.0-13  haskell-digest-0.0.1.2-14
+               haskell-distributive-0.6-28  haskell-dlist-0.8.0.6-6
+               haskell-easy-file-0.2.2-8  haskell-echo-0.1.3-11
+               haskell-ed25519-0.0.5.0-13  haskell-either-5.0.1.1-8
+               haskell-enclosed-exceptions-1.0.3-28  haskell-erf-2.0.0.0-13
+               haskell-exceptions-0.10.2-6  haskell-extra-1.6.17-1
+               haskell-fast-logger-2.4.15-8  haskell-file-embed-0.0.11-6
+               haskell-filelock-0.1.1.3-1  haskell-free-5.1.1-10
+               haskell-fsnotify-0.3.0.1-49  haskell-generic-deriving-1.12.4-9
+               haskell-githash-0.1.3.1-54  haskell-glob-0.10.0-13
+               haskell-hackage-security-0.5.3.0-50  haskell-hashable-1.2.7.0-8
+               haskell-hinotify-0.4-6 haskell-hourglass-0.2.12-23
+               haskell-hpack-0.31.2-32  haskell-hspec-2.7.1-5
+               haskell-hspec-core-2.7.1-5  haskell-hspec-discover-2.7.1-5
+               haskell-hspec-expectations-0.8.2-13
+               haskell-hspec-smallcheck-0.5.2-48 haskell-http-api-data-0.4.1-3
+               haskell-http-client-0.6.4-11
+               haskell-http-client-tls-0.3.5.3-121
+               haskell-http-conduit-2.3.7.1-16  haskell-http-types-0.12.3-16
+               haskell-hunit-1.6.0.0-12  haskell-infer-license-0.2.0-27
+               haskell-integer-logarithms-1.0.3-2  haskell-libyaml-0.1.1.0-21
+               haskell-lifted-async-0.10.0.4-13
+               haskell-lifted-base-0.2.3.12-41  haskell-logict-0.6.0.3-1
+               haskell-megaparsec-7.0.5-3  haskell-memory-0.14.18-23
+               haskell-microlens-0.4.10-5  haskell-microlens-th-0.4.2.3-9
+               haskell-mime-types-0.1.0.9-3  haskell-mintty-0.1.2-7
+               haskell-monad-control-1.0.2.3-41  haskell-monad-logger-0.3.30-50
+               haskell-monad-loops-0.4.3-14
+               haskell-mono-traversable-1.0.11.0-21  haskell-mustache-2.3.0-193
+               haskell-neat-interpolation-0.3.2.4-15
+               haskell-network-2.8.0.0-13  haskell-network-uri-2.6.1.0-18
+               haskell-old-locale-1.0.0.7-19  haskell-old-time-1.1.0.3-19
+               haskell-open-browser-0.2.1.0-14
+               haskell-optparse-applicative-0.14.3.0-16
+               haskell-optparse-simple-0.1.1.2-23
+               haskell-parser-combinators-1.0.3-1  haskell-path-0.6.1-103
+               haskell-path-io-1.4.2-25 haskell-path-pieces-0.2.1-19
+               haskell-pem-0.2.4-49  haskell-persistent-2.9.2-21
+               haskell-persistent-sqlite-2.9.3-20
+               haskell-persistent-template-2.6.0-38
+               haskell-primitive-0.6.4.0-6  haskell-profunctors-5.4-7
+               haskell-project-template-0.2.0.1-140
+               haskell-quickcheck-2.13.1-4  haskell-quickcheck-io-0.2.0-22
+               haskell-random-1.1-17  haskell-regex-applicative-0.3.3-13
+               haskell-regex-applicative-text-0.1.0.1-15
+               haskell-resource-pool-0.2.3.2-71  haskell-resourcet-1.2.2-22
+               haskell-retry-0.8.0.1-8  haskell-rio-0.1.9.2-11
+               haskell-safe-0.3.17-7  haskell-scientific-0.3.6.2-13
+               haskell-semigroupoids-5.3.2-20  haskell-setenv-0.1.1.3-14
+               haskell-shelly-1.8.1-59  haskell-silently-1.2.5-14
+               haskell-smallcheck-1.1.5-7  haskell-socks-0.6.0-5
+               haskell-split-0.2.3.3-15  haskell-splitmix-0.0.2-11
+               haskell-statevar-1.1.1.1-6  haskell-stm-chans-3.0.0.4-16
+               haskell-store-0.5.1.1-3  haskell-store-core-0.4.4-6
+               haskell-streaming-commons-0.2.1.0-29  haskell-syb-0.7-11
+               haskell-system-fileio-0.3.16.4-19
+               haskell-system-filepath-0.4.14-24  haskell-tagged-0.8.6-6
+               haskell-tar-0.5.1.0-8  haskell-temporary-1.3-32
+               haskell-text-metrics-0.3.0-29  haskell-tf-random-0.5-24
+               haskell-th-abstraction-0.2.11.0-3
+               haskell-th-expand-syns-0.4.4.0-8  haskell-th-lift-0.7.11-8
+               haskell-th-lift-instances-0.1.11-42
+               haskell-th-orphans-0.13.7-14  haskell-th-reify-many-0.1.9-2
+               haskell-th-utilities-0.2.3.0-4  haskell-time-compat-1.9.2.2-5
+               haskell-time-locale-compat-0.1.1.5-6  haskell-tls-1.4.1-72
+               haskell-transformers-base-0.4.5.2-39
+               haskell-transformers-compat-0.6.5-1
+               haskell-typed-process-0.2.4.0-16
+               haskell-unicode-transforms-0.3.5-4  haskell-unix-compat-0.5.1-6
+               haskell-unix-time-0.4.5-13 haskell-unliftio-0.2.10-16
+               haskell-unliftio-core-0.1.2.0-6
+               haskell-unordered-containers-0.2.10.0-9
+               haskell-uuid-types-1.0.3-20  haskell-vector-0.12.0.3-8
+               haskell-vector-algorithms-0.8.0.1-20  haskell-void-0.7.3-1
+               haskell-x509-1.7.5-20  haskell-x509-store-1.6.7-19
+               haskell-x509-system-1.6.6-87  haskell-x509-validation-1.6.11-19
+               haskell-yaml-0.11.0.0-47  haskell-zip-archive-0.4.1-8
+               haskell-zlib-0.6.2-8  stack-1.9.3.1-50
+
+Total Download Size:    47.63 MiB
+Total Installed Size:  396.91 MiB
+```
+
+It takes 400 MiB to just install Stack. Then, when you run `stack` for the
+first time, it downloads another 100 MB. Then you compile the project, and it
+downloads about 150 packages. Then it compiles it, but sequentially.
+Compilation is long enough.
+
+Eventually, it takes about half an hour to convert an md file to html. And I have
+to download about 0.5 GB, not taking into accout the stuff `stack` downloads.
+
+This is outrageous. This is bloatware. I need to think about changing my static
+site generator.
