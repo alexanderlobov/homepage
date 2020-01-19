@@ -1,9 +1,11 @@
+- converter from the jekyll filenames to date in the metadata
+- add date to the post
+- sort index according to the date
 - header to the posts
 - should work without index.html for the main page and for the posts
 - css
-- add date to the post
-- sort index according to the date
-- converter from the jekyll filenames to date in the metadata
+- pics
+
 - fix favicon error
 - write a post about new site generator
 - prepare the site generator and publish it on github
@@ -13,6 +15,7 @@
   list
 - add email
 - optimize make-index
+- remove hakyll stuff
 
 
 This is outrageous:
