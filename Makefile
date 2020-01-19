@@ -24,10 +24,10 @@ all: $(posts_html) $(index) $(css)
 $(site_dir)/%.html $(build_dir)/%.meta: $(post_dir)/%.md process-md
 > @mkdir -p $(site_dir)
 > @mkdir -p $(build_dir)
-> ./process-md <$< $(build_dir)/$*.meta $*.html >$(site_dir)/$*.html 
+> ./process-md <$< $(build_dir)/$*.meta $*.html >$(site_dir)/$*.html
 
-$(index): index.head.md $(posts_meta) make-index
-> ./make-index $< $(posts_meta) | $(markdown) >$@
+$(index): $(posts_meta) make-index
+> ./make-index $(posts_meta) >$@
 
 $(css): $(css_file)
 > cp $< $@

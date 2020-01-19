@@ -1,10 +1,8 @@
-- converter from the jekyll filenames to date in the metadata
-- add date to the post
-- sort index according to the date
-- header to the posts
+- rename process-md to process-post
+- check How to debug python extensions
 - should work without index.html for the main page and for the posts
-- css
 - pics
+- mac configuration cheatsheet: fix russian letters
 
 - fix favicon error
 - write a post about new site generator

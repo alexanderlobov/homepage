@@ -14,12 +14,21 @@ usage() {
 
 [[ -n "$template" ]] || usage
 
-cat "$template"
+make_md() {
+    cat <<EOF
+Alexander Lobov's blog. You can find me on
+[Linkedin](https://www.linkedin.com/in/alexanderlobov) or
+[Github](https://github.com/alexanderlobov).
 
-cat $posts_meta | \
-sort -rk1 |
-while IFS=$'\t' read date title href; do
-    printf "[%s %s](%s)\n\n" "$date" "$title" "$href"
-done
+EOF
 
-echo
+    cat $posts_meta | \
+    sort -rk1 |
+    while IFS=$'\t' read date title href; do
+        printf "[%s %s](%s)\n\n" "$date" "$title" "$href"
+    done
+
+    echo
+}
+
+make_md | title="Alexander Lobov's blog" ./md-to-html
