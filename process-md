@@ -25,11 +25,18 @@ read line
 [[ "$line" = "$meta_delim" ]] || error "the first line should be ---"
 
 while IFS=$': \t\n' read key value; do
-    [[ "$key" == "$meta_delim" ]] && break
-    if [[ "$key" = "title" ]]; then
-        echo -e >"$meta_file" "$value\t$href"
-        echo "# $value"
-    fi
+    case "$key" in
+        "title")
+            title="$value"
+            echo "# $value"
+            ;;
+        "date")
+            date="$value"
+            ;;
+        "$meta_delim")
+            printf >"$meta_file" "%s\t%s\t%s\n" "$date" "$title" "$href"
+            break;
+    esac
 done
 
 cat

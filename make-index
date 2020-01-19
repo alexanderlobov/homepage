@@ -17,8 +17,8 @@ usage() {
 cat "$template"
 
 for f in $posts_meta; do
-    IFS=$'\t' read title href <$f
-    printf "[%s](%s)\n\n" "$title" "$href"
+    IFS=$'\t' read date title href <$f
+    printf "[%s %s](%s)\n\n" "$date" "$title" "$href"
 done
 
 echo
