@@ -1,0 +1,14 @@
+#!/bin/bash
+
+newdir=newposts
+mkdir -p $newdir
+cd posts
+
+date_template="YYYY-MM-DD"
+len=${#date_template}
+for f in *; do
+    d=${f::len}
+    newf=${f:len}
+    newf=${newf:1}
+    sed -e "1adate: $d" "$f" >../$newdir/"$newf"
+done
