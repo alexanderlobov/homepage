@@ -1,0 +1,35 @@
+#!/bin/bash
+
+meta_file="$1"
+href="$2"
+
+error() {
+    echo >&2 $1
+    exit 1
+}
+
+usage() {
+    error \
+"Usage:
+    $0 <meta_file> <href>
+"
+    exit 1
+}
+
+[[ -n "$meta_file" ]] || usage
+[[ -n "$href" ]] || usage
+
+meta_delim="---"
+
+read line
+[[ "$line" = "$meta_delim" ]] || error "the first line should be ---"
+
+while IFS=$': \t\n' read key value; do
+    [[ "$key" == "$meta_delim" ]] && break
+    if [[ "$key" = "title" ]]; then
+        echo -e >"$meta_file" "$value\t$href"
+        echo "# $value"
+    fi
+done
+
+cat

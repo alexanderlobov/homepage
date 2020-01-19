@@ -4,3 +4,6 @@
 _site
 _cache
 tags
+access.log
+build
+site

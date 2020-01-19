@@ -1,3 +1,20 @@
+- header to the posts
+- should work without index.html for the main page and for the posts
+- css
+- add date to the post
+- sort index according to the date
+- converter from the jekyll filenames to date in the metadata
+- fix favicon error
+- write a post about new site generator
+- prepare the site generator and publish it on github
+- post to hacker news show
+- do not re-make index if only the article, without metadata, is changed
+- support a big quantity of input files to make-index, use a file to pass the
+  list
+- add email
+- optimize make-index
+
+
 This is outrageous:
 
 [alex@alex homepage]$ sudo pacman -S stack
@@ -35,3 +52,5 @@ Total Download Size:    47.63 MiB
 Total Installed Size:  396.91 MiB
 
 I should think about moving to another static site generator.
+
+

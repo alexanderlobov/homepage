@@ -1,0 +1,24 @@
+#!/bin/bash
+
+template="$1"
+shift
+posts_meta="$@"
+
+usage() {
+    echo \
+"Usage:
+    make-index <template> <post-directory>
+"
+    exit 1
+}
+
+[[ -n "$template" ]] || usage
+
+cat "$template"
+
+for f in $posts_meta; do
+    IFS=$'\t' read title href <$f
+    printf "[%s](%s)\n\n" "$title" "$href"
+done
+
+echo
