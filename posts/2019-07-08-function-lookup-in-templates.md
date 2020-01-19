@@ -1,4 +1,5 @@
 ---
+date: 2019-07-08
 title: C++: Function Lookup in Templates
 tags: c++
 ---

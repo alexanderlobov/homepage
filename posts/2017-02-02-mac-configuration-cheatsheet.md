@@ -1,4 +1,5 @@
 ---
+date: 2017-02-02
 title: Mac configuration cheatsheet
 tags: mac
 language: russian, english

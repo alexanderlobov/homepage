@@ -1,4 +1,5 @@
 ---
+date: 2017-02-03
 title: How to setup Transmission torrent client with web interface and logging
 tags: transmission,tutorial
 language: english

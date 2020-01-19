@@ -1,4 +1,5 @@
 ---
+date: 2018-01-25
 title: How to use italics in vim
 tags: vim, colorscheme
 language: english

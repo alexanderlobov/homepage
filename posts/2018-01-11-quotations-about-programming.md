@@ -1,4 +1,5 @@
 ---
+date: 2018-01-11
 title: Quotations about programming
 tags: quote
 language: english

@@ -1,4 +1,5 @@
 ---
+date: 2017-02-16
 title: How to debug python extensions
 tags: python, gdb
 language: russian

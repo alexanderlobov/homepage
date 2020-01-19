@@ -1,4 +1,5 @@
 ---
+date: 2016-11-11
 title: Deploying a site to git
 tags: hakyll,git
 language: english

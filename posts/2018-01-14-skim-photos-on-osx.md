@@ -1,4 +1,5 @@
 ---
+date: 2018-01-14
 title: How to skim photos on OSX
 tags: osx
 language: english

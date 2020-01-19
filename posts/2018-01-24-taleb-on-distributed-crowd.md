@@ -1,4 +1,5 @@
 ---
+date: 2018-01-24
 title: Taleb on distributed crowd
 language: english
 ---
