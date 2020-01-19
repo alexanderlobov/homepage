@@ -13,7 +13,6 @@ usage() {
 "Usage:
     $0 <meta_file> <href>
 "
-    exit 1
 }
 
 [[ -n "$meta_file" ]] || usage
@@ -28,7 +27,6 @@ while IFS=$': \t\n' read key value; do
     case "$key" in
         "title")
             title="$value"
-            echo "# $value"
             ;;
         "date")
             date="$value"
@@ -39,4 +37,41 @@ while IFS=$': \t\n' read key value; do
     esac
 done
 
-cat
+full_md() {
+    echo "# $title"
+    echo "Posted on $date"
+    cat
+}
+
+cat <<EOF
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Alexander Lobov's blog - $title</title>
+    <link rel="stylesheet" type="text/css" href="default.css" />
+    <!--
+    <style>
+    body {
+        width: 600px;
+    }
+    </style>
+    -->
+</head>
+<body>
+<div id="header">
+    <div id="logo">
+        <a href="/">Alexander Lobov's blog</a>
+    </div>
+</div>
+
+<div id="content">
+EOF
+
+full_md | $env_markdown
+
+cat <<EOF
+</div>
+</body>
+</html>
+EOF
