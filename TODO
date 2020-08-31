@@ -14,6 +14,10 @@
 - add email
 - optimize make-index
 - remove hakyll stuff
+- automatically post links to discussions on reddit or hackernews, twitter
+  example http://www.oilshell.org/blog/2020/01/simplest-explanation.html
+- flatten the directory structure, move posts from the posts directory
+- use make vpath directive
 
 
 This is outrageous:
